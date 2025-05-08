@@ -15,7 +15,7 @@ pdb.write("users", [{
 ## Why Pocket Database?
 If you need an on-the-go database without hassle setups, Pocket Database is one of your best choice.
 
-Creatinf database is limitless, which means you can create many databases as you want.
+Creating database and creating records (pages) is limitless, which means you can create many databases and records as you want.
 
 ## Notice
 Since Pocket Database utilizes Telegraph API, please expect that your data can be viewed publicly if your database token has been compromised.
@@ -28,9 +28,7 @@ Please use Pocket Database with caution, especially for sensitive data.
 
 Even though creating databases is limitless, its content is not. According to Telegraph, you can only store 64kB of data per record (per page).
 
-However, creating pages is also limitless, so I suggest you to expand and populate your data into multiple records.
-
-Additionally, Pocket Database only supports read and write, currently. Therefore, you cannot delete records yet. I suggest you to override it with nil.
+Since creating records is limitless, I suggest you to expand and populate your data into multiple records.
 
 ## Live Demo
 
@@ -41,7 +39,7 @@ If you want a quick view and tour to your website, you can use Pocket Database L
 
 ## Rest API
 
-To be fully committed on being an on-the-go database, I implemented a simple read and write Rest API for Pocket Database.
+To be fully committed on being an on-the-go database, I implemented a simple CRUD-operated Rest API for Pocket Database.
 
 <!-- TODO: Fix the Rest API and add it here. -->
 [![Pocket Database Rest API](https://badgers.space/badge/PocketDB/Rest%20API?icon=feather-activity&color=e97451&scale=1.2&corner_radius=3)](about:blank)
