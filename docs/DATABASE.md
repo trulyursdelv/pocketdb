@@ -23,5 +23,5 @@ pdb = PocketDatabase.new(token: "Your token here...")
 
 If that database does not exist, an error will be raised.
 
-## Next Step
+## Next step
 - [Manipulating a record](RECORD.md)
