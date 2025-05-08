@@ -27,6 +27,11 @@ Alternatively, add Pocket Database in your **gemfile**:
 gem "pocketdb", "~> 1.0"
 ```
 
+## Documentations
+- [Getting Started](docs/README.md)
+- [Connecting to a database](docs/DATABASE.md)
+- [Manipulating a record](docs/RECORD.md)
+
 ## Live Demo
 
 If you want a quick view and tour to your website, you can use Pocket Database Live Demo.
