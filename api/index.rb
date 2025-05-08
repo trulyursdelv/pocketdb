@@ -8,6 +8,7 @@ Handler = Proc.new do |request, response|
   response["Access-Control-Allow-Headers"] = "*"
   response["Access-Control-Allow-Methods"] = "*"
   response["Content-Type"] = "application/json"
+  response.status = 200;
   app.use(request, response)
 end
 
