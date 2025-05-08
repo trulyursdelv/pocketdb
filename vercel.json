@@ -7,7 +7,7 @@
     }
   },
   "rewrites": [{
-    "source": "/v1/api/(.*)",
+    "source": "/v1/api/*",
     "destination": "api/index.rb"
   }]
 }
