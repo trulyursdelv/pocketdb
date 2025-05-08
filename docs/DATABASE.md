@@ -1,4 +1,4 @@
-## Creating a database
+## Creating new database
 To create a database, simply define a new instance of PocketDatabase. It will automatically create a new database.
 
 ```ruby
@@ -22,3 +22,6 @@ pdb = PocketDatabase.new(token: "Your token here...")
 ```
 
 If that database does not exist, an error will be raised.
+
+## Next Step
+- [Manipulating a record](RECORD.md)
