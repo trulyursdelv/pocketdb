@@ -149,11 +149,11 @@ hr {
   font-size: 12px;
 }
 
+[data-buttons],
+[data-textarea],
 #dashboard-page,
 #security-alert,
 #security-notice,
-[data-buttons],
-[data-textarea],
 #dashboard-buttons,
 #dashboard-input {
   display: none;
