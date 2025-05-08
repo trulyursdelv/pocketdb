@@ -22,3 +22,16 @@ pdb = PocketDatabase.new(token: "Your token here...")
 ```
 
 If that database does not exist, an error will be raised.
+
+## List all records
+
+To list all the created records, use the `records()` method. This method will return a list of string, which is all the record keys.
+
+Please take note that this method will also include the deleted records.
+
+```ruby
+require "pocketdb"
+
+pdb = PocketDatabase.new(token: "Your token here...")
+puts pdb.records.inspect
+```
