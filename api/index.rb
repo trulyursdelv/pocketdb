@@ -11,7 +11,7 @@ def send(response, status, payload)
   response.header("Access-Control-Allow-Origin", "*")
   response.header("Content-Type", "application/json")
   result = { success: status }
-  if success
+  if status
     result["result"] = payload
   else
     result["error"] = payload
