@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "~> 3.3.x"
+ruby "3.2.2"
 
 # dependencies
 gem "navykit", "~> 1.0"
