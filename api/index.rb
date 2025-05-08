@@ -21,8 +21,8 @@ end
 
 app.post("/v1/api/write") do |request, response|
   begin
-    token = request.query.fetch("token")
-    record = request.query.fetch("record")
+    token = request.query("token")
+    record = request.query("record")
     if record.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
@@ -39,8 +39,8 @@ end
 
 app.get("/v1/api/read") do |request, response|
   begin
-    token = request.query.fetch("token")
-    record = request.query.fetch("record")
+    token = request.query("token")
+    record = request.query("record")
     if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
@@ -58,8 +58,8 @@ end
 
 app.get("/v1/api/has") do |request, response|
   begin
-    token = request.query.fetch("token")
-    record = request.query.fetch("record")
+    token = request.query("token")
+    record = request.query("record")
     if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
@@ -77,8 +77,8 @@ end
 
 app.get("/v1/api/delete") do |request, response|
   begin
-    token = request.query.fetch("token")
-    record = request.query.fetch("record")
+    token = request.query("token")
+    record = request.query("record")
     if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
