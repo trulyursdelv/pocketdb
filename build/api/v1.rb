@@ -92,3 +92,7 @@ app.get("/api/v1/delete") do |request, response|
     next send(response, false, e.backtrace)
   end
 end
+
+app.notfound do |request, response|
+  send(response, false, "INVALID_ENDPOINT")
+end
