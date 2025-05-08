@@ -1,4 +1,8 @@
 ## Pocket Database ⚡
+
+<!-- TODO: Upload to rubygems -->
+[![Pocket Database Rest API](https://badgers.space/badge/PocketDB/on%20Rubygems?icon=feather-package&color=c41e3a&scale=1.2&corner_radius=3)](https://rubygems.org/gems/pocketdb)
+
 Pocket Database is a lightweight tool that utilizes [Telegraph API](https://telegra.ph) as a database. It is limitless, public, and on-the-go.
 
 ```ruby
