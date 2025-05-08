@@ -1,7 +1,7 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "buildCommand": "bundle config set path './public' && bundle install",
+  "buildCommand": "bundle config set --local path 'public' && bundle install"
   "functions": {
     "api/*.rb": {
       "runtime": "@vercel/ruby@2.2.0"
