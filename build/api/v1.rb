@@ -41,7 +41,7 @@ app.get("/api/v1/read") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
-    if record.nil?
+    if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
@@ -60,7 +60,7 @@ app.get("/api/v1/has") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
-    if record.nil?
+    if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
@@ -79,7 +79,7 @@ app.get("/api/v1/delete") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
-    if record.nil?
+    if record.nil? || token.nil?
       next send(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
