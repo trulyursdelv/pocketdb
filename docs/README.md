@@ -9,5 +9,5 @@ Under the hood, a database instance of Pocket Database is a telegraph account, a
 An instance of database consists of multiple records. And those records holds the actual data.
 
 ## Table of Contents
-- [Connecting to a database](/DATABASE.md)
-- [Manipulating a record](/RECORD.md)
+- [Connecting to a database](DATABASE.md)
+- [Manipulating a record](RECORD.md)
