@@ -46,7 +46,8 @@ app.get("/api/v1/read") do |request, response|
     result = pdb.read(record)
     next send(response, true, {
       token: pdb.token,
-      list: pdb.records
+      list: pdb.records,
+      data: result
     })
   rescue Exception => e
     next send(response, false, e.backtrace)
@@ -62,7 +63,11 @@ app.get("/api/v1/has") do |request, response|
     end
     pdb = PocketDatabase.new(token: token)
     result = pdb.has(record)
-    next send(response, true, result)
+    next send(response, true, {
+      token: pdb.token,
+      list: pdb.records,
+      exists: result
+    })
   rescue Exception => e
     next send(response, false, e.backtrace)
   end
@@ -77,7 +82,10 @@ app.get("/api/v1/delete") do |request, response|
     end
     pdb = PocketDatabase.new(token: token)
     pdb.delete(record)
-    next send(response, true)
+    next send(response, true, {
+      token: pdb.token,
+      list: pdb.records
+    })
   rescue Exception => e
     next send(response, false, e.backtrace)
   end
