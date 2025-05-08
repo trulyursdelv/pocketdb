@@ -19,7 +19,7 @@ def send(response, status, payload)
   response.send(200, result.to_json)
 end
 
-app.post("/api/v1/write") do |request, response|
+app.post("/v1/api/write") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
@@ -37,7 +37,7 @@ app.post("/api/v1/write") do |request, response|
   end
 end
 
-app.get("/api/v1/read") do |request, response|
+app.get("/v1/api/read") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
@@ -56,7 +56,7 @@ app.get("/api/v1/read") do |request, response|
   end
 end
 
-app.get("/api/v1/has") do |request, response|
+app.get("/v1/api/has") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
@@ -75,7 +75,7 @@ app.get("/api/v1/has") do |request, response|
   end
 end
 
-app.get("/api/v1/delete") do |request, response|
+app.get("/v1/api/delete") do |request, response|
   begin
     token = request.query["token"]
     record = request.query["record"]
