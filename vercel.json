@@ -10,7 +10,7 @@
   }],
   "rewrites": [{
     "source": "/api/v1/(.*)",
-    "destination": "/api/v1.rb"
+    "destination": "/build/api/v1.rb"
   }, {
     "source": "/demo/(.*)",
     "destination": "/build/demo/$1"
