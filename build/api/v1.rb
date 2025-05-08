@@ -8,6 +8,8 @@ Handler = Proc.new do |request, response|
 end
 
 def send(response, status, payload)
+  response.header("Access-Control-Allow-Origin", "*")
+  response.header("Content-Type", "application/json")
   result = { success: status }
   if success
     result["result"] = payload
