@@ -36,8 +36,7 @@ gem "pocketdb", "~> 1.0"
 
 If you want a quick view and tour to your website, you can use Pocket Database Live Demo.
 
-<!-- TODO: Fix the Live Demo and add it here. -->
-[![Pocket Database Live Demo](https://badgers.space/badge/PocketDB/Live%20Demo?icon=feather-database&color=53a584&scale=1.2&corner_radius=3)](about:blank)
+[![Pocket Database Live Demo](https://badgers.space/badge/PocketDB/Live%20Demo?icon=feather-database&color=53a584&scale=1.2&corner_radius=3)](https://trulyursdelv.github.io/pocketdb/)
 
 ## Rest API
 
