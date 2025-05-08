@@ -1,11 +1,10 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "functions": {
-    "api/index.rb": {
-      "runtime": "@vercel/ruby@2.2.0"
-    }
-  },
+  "builds": [{
+    "src": "api/index.rb",
+    "use": "@vercel/ruby"
+  }],
   "rewrites": [{
     "source": "/v1/api/(.*)",
     "destination": "api/index.rb"
