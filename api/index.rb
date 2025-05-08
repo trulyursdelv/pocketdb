@@ -4,12 +4,14 @@ require 'pocketdb'
 
 app = NavyKit.new
 Handler = Proc.new do |request, response|
+  response.setHeader("Access-Control-Allow-Origin", "*")
+  response.setHeader("Access-Control-Allow-Headers", "*")
+  response.setHeader("Access-Control-Allow-Methods", "*")
+  response.setHeader("Content-Type", "application/json")
   app.use(request, response)
 end
 
 def send(response, status, payload)
-  response.header("Access-Control-Allow-Origin", "*")
-  response.header("Content-Type", "application/json")
   result = { success: status }
   if status
     result["result"] = payload
