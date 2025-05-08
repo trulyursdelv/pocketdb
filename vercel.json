@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "verion": 2,
   "cleanUrls": true,
   "functions": {
     "api/index.rb": {
@@ -7,7 +7,7 @@
     }
   },
   "rewrites": [{
-    "source": "/api/v1/(.*)",
+    "source": "/v1/api/(.*)",
     "destination": "/api/index.rb"
   }]
 }
