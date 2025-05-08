@@ -4,10 +4,10 @@ require 'pocketdb'
 
 app = NavyKit.new
 Handler = Proc.new do |request, response|
-  response.setHeader("Access-Control-Allow-Origin", "*")
-  response.setHeader("Access-Control-Allow-Headers", "*")
-  response.setHeader("Access-Control-Allow-Methods", "*")
-  response.setHeader("Content-Type", "application/json")
+  response["Access-Control-Allow-Origin"] = "*"
+  response["Access-Control-Allow-Headers"] = "*"
+  response["Access-Control-Allow-Methods"] = "*"
+  response["Content-Type"] = "application/json"
   app.use(request, response)
 end
 
