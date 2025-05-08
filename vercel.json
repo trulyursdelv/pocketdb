@@ -2,10 +2,11 @@
   "version": 2,
   "cleanUrls": true,
   "builds": [{
-    "src": "api/v1.rb",
+    "src": "api/(.*)",
     "use": "@vercel/ruby"
   }, {
-    "src": "demo/(.*)"
+    "src": "demo/(.*)",
+    "use": "@vercel/static"
   }],
   "rewrites": [{
     "source": "/api/v1/(.*)",
