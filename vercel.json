@@ -4,7 +4,8 @@
   "functions": {
     "api/*.rb": {
       "runtime": "@vercel/ruby@2.2.0"
-    }
+    },
+    "demo/*": {}
   },
   "rewrites": [{
     "source": "/api/v1/(.*)",
