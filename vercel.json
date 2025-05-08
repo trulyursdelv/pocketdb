@@ -1,5 +1,5 @@
 {
-  "verion": 2,
+  "version": 2,
   "cleanUrls": true,
   "functions": {
     "api/index.rb": {
