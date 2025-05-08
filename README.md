@@ -46,7 +46,7 @@ To be fully committed on being an on-the-go database, I implemented a simple CRU
 <!-- TODO: Fix the Rest API and add it here. -->
 [![Pocket Database Rest API](https://badgers.space/badge/PocketDB/Rest%20API?icon=feather-activity&color=e97451&scale=1.2&corner_radius=3)](about:blank)
 
-## Why Pocket Database?
+## :sparkles: Why Pocket Database?
 If you need an on-the-go database without hassle setups, Pocket Database is one of your best choice.
 
 Creating database and creating records (pages) is limitless, which means you can create many databases and records as you want.
