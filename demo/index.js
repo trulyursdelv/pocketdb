@@ -18,7 +18,7 @@ async function login() {
   $("#login-spinner").show();
   $("#login-btn-login, #login-btn-new, #login-input").prop("disabled", true);
   try {
-    const f = await fetch(`https://pocketdatabase.vercel.app/api/v1/read?record=main&token=${token}`);
+    const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/api/v1/read?record=main&token=${token}`);
     const res = await f.json();
     if(!res.success && res.error.includes("ACCESS_TOKEN_INVALID")) {
       $("#login-input").addClass("pdb-input-error");
@@ -66,7 +66,7 @@ async function initialize() {
   for(let i = 0; i < dataset.length; i++) {
     let key = dataset[i];
     try {
-      const f = await fetch(`https://pocketdatabase.vercel.app/read?record=${key}&token=${token}`);
+      const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/read?record=${key}&token=${token}`);
       const res = await f.json();
       if(!res.success) return false;
       const val = res.result.data;
@@ -194,7 +194,7 @@ async function commit(key) {
     $("#dashboard-spinner").show();
     window.requests++;
     try {
-      const f = await fetch(`https://pocketdatabase.vercel.app/write?record=${key}&token=${token}`, {
+      const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/write?record=${key}&token=${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -244,7 +244,7 @@ async function commit(key) {
     $(`[data-spinner="${key}"]`).show();
     window.requests++;
     try {
-      const f = await fetch(`https://pocketdatabase.vercel.app/write?record=${key}&token=${token}`, {
+      const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/write?record=${key}&token=${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -310,7 +310,7 @@ async function newdatabase() {
   $("#login-spinner-2").show();
   $("#login-btn-login, #login-btn-new, #login-input").prop("disabled", true);
   try {
-    const f = await fetch(`https://pocketdatabase.vercel.app/write?record=main`, {
+    const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/write?record=main`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
