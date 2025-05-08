@@ -15,9 +15,9 @@ end
 def send(response, status, payload)
   result = { success: status }
   if status
-    result["result"] = payload
+    result[:result] = payload
   else
-    result["error"] = payload
+    result[:error] = payload
   end
   response.send(200, result.to_json)
 end
@@ -32,7 +32,7 @@ app.post("/v1/api/write") do |request, response|
     pdb = PocketDatabase.new(token: token)
     pdb.write(record, request.json)
     next send(response, true, {
-      token: pdb.token,
+      token: pdb.token
       list: pdb.records
     })
   rescue Exception => e
