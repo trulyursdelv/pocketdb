@@ -8,6 +8,6 @@
   },
   "rewrites": [{
     "source": "/v1/api/(.*)",
-    "destination": "/api/index.rb"
+    "destination": "api/index.rb"
   }]
 }
