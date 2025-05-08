@@ -36,7 +36,7 @@ app.post("/v1/api/write") do |request, response|
     })
   rescue Exception => e
     next send(response, false, {
-      message: e.to_str,
+      message: e.to_s,
       trace: e.backtrace
     })
   end
@@ -58,7 +58,7 @@ app.get("/v1/api/read") do |request, response|
     })
   rescue Exception => e
     next send(response, false, {
-      message: e.to_str,
+      message: e.to_s,
       trace: e.backtrace
     })
   end
@@ -80,7 +80,7 @@ app.get("/v1/api/has") do |request, response|
     })
   rescue Exception => e
     next send(response, false, {
-      message: e.to_str,
+      message: e.to_s,
       trace: e.backtrace
     })
   end
@@ -101,7 +101,7 @@ app.get("/v1/api/delete") do |request, response|
     })
   rescue Exception => e
     next send(response, false, {
-      message: e.to_str,
+      message: e.to_s,
       trace: e.backtrace
     })
   end
