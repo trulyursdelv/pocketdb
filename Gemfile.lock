@@ -13,7 +13,7 @@ DEPENDENCIES
   pocketdb (~> 1.0)
 
 RUBY VERSION
-   ruby 3.4.1p0
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.6.2
