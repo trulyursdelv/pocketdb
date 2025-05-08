@@ -1,7 +1,7 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "buildCommand": "bundle config unset path && bundle config set --local path public && bundle install",
+  "buildCommand": "gem install navykit pocketdb",
   "functions": {
     "api/*.rb": {
       "runtime": "@vercel/ruby@2.2.0"
