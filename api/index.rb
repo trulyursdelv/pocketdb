@@ -1,6 +1,6 @@
 require 'navykit'
-require 'pocketdb'
 require 'json'
+require 'pocketdb'
 
 app = NavyKit.new
 Handler = Proc.new do |request, response|
