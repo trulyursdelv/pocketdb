@@ -31,11 +31,14 @@ app.post("/v1/api/write") do |request, response|
     pdb = PocketDatabase.new(token: token)
     pdb.write(record, request.json)
     next send(response, true, {
-      token: pdb.token
+      token: pdb.token,
       list: pdb.records
     })
   rescue Exception => e
-    next send(response, false, { message: e.to_str, trace: e.backtrace })
+    next send(response, false, {
+      message: e.to_str,
+      trace: e.backtrace
+    })
   end
 end
 
@@ -54,7 +57,10 @@ app.get("/v1/api/read") do |request, response|
       data: result
     })
   rescue Exception => e
-    next send(response, false, { message: e.to_str, trace: e.backtrace })
+    next send(response, false, {
+      message: e.to_str,
+      trace: e.backtrace
+    })
   end
 end
 
@@ -73,7 +79,10 @@ app.get("/v1/api/has") do |request, response|
       exists: result
     })
   rescue Exception => e
-    next send(response, false, { message: e.to_str, trace: e.backtrace })
+    next send(response, false, {
+      message: e.to_str,
+      trace: e.backtrace
+    })
   end
 end
 
@@ -91,7 +100,10 @@ app.get("/v1/api/delete") do |request, response|
       list: pdb.records
     })
   rescue Exception => e
-    next send(response, false, { message: e.to_str, trace: e.backtrace })
+    next send(response, false, {
+      message: e.to_str,
+      trace: e.backtrace
+    })
   end
 end
 
