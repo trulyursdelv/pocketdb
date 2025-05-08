@@ -1,13 +1,12 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "buildCommand": "gem install navykit pocketdb",
-  "functions": {
-    "api/*.rb": {
-      "runtime": "@vercel/ruby@2.2.0"
-    },
-    "demo/*": {}
-  },
+  "builds": [{
+    "src": "api/v1.rb",
+    "use": "@vercel/ruby"
+  }, {
+    "src": "demo/(.*)"
+  }],
   "rewrites": [{
     "source": "/api/v1/(.*)",
     "destination": "/api/v1.rb"
