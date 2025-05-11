@@ -33,7 +33,8 @@ app.post("/v1/api/write") do |request, response|
     # pdb.write(record, request.json)
     next send_response(response, true, {
       token: pdb.token,
-      list: pdb.records
+      list: pdb.records,
+      request: request.json
     })
   rescue Exception => e
     next send_response(response, false, {
