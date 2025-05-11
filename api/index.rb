@@ -51,7 +51,7 @@ app.get("/v1/api/read") do |request, response|
     token = request.query("token")
     record = request.query("record")
     if record.nil? || token.nil?
-      next send_response(response, false, "INCOMPLETE_PARAMETERS")
+      next send_response(response, false, "INCOMPLETE_PARAMETERS: #{token}, #{record}")
     end
     pdb = PocketDatabase.new(token: token)
     result = pdb.read(record)
