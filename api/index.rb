@@ -6,6 +6,7 @@ app = NavyKit.new
 Handler = Proc.new do |request, response|
   response["Access-Control-Allow-Origin"] = "*"
   response["Access-Control-Allow-Methods"] = "*"
+  response["Access-Control-Allow-Headers"] = "*"
   response["Content-Type"] = "application/json"
   response.status = 200;
   app.use(request, response)
