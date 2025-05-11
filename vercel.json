@@ -8,5 +8,18 @@
   "rewrites": [{
     "source": "/v1/api/(.*)",
     "destination": "api/index.rb"
+  }],
+  "headers": [{
+    "source": "/v1/api/(.*)",
+    "headers": [{
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    }, {
+      "key": "Access-Control-Allow-Headers",
+      "value": "*"
+    }, {
+      "key": "Access-Control-Allow-Methods",
+      "value": "*"
+    }]
   }]
 }
