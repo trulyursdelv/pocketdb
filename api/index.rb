@@ -36,8 +36,7 @@ app.post("/v1/api/write") do |request, response|
     pdb.write(record, JSON.parse($request_data))
     next send_response(response, true, {
       token: pdb.token,
-      list: pdb.records,
-      data: request.text
+      list: pdb.records
     })
   rescue Exception => e
     next send_response(response, false, {
