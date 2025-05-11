@@ -11,7 +11,7 @@ Handler = Proc.new do |request, response|
   response["Access-Control-Allow-Headers"] = "*"
   response["Content-Type"] = "application/json"
   response.status = 200;
-  $request_data = JSON.parse(request.body)
+  $request_data = request.body
   next app.use(request, response)
 end
 
@@ -33,7 +33,7 @@ app.post("/v1/api/write") do |request, response|
       next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
-    pdb.write(record, $request_data)
+    pdb.write(record, JSON.parse($request_data))
     next send_response(response, true, {
       token: pdb.token,
       list: pdb.records,
