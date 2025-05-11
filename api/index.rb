@@ -29,11 +29,11 @@ app.post("/v1/api/write") do |request, response|
     if record.nil?
       next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
-    pdb = PocketDatabase.new(token: token)
-    pdb.write(record, request.json)
+    # pdb = PocketDatabase.new(token: token)
+    # pdb.write(record, request.json)
     next send_response(response, true, {
-      token: pdb.token,
-      list: pdb.records
+      # token: pdb.token,
+      # list: pdb.records
     })
   rescue Exception => e
     next send_response(response, false, {
