@@ -12,7 +12,7 @@ Handler = Proc.new do |request, response|
   app.use(request, response)
 end
 
-def send(response, status, payload)
+def send_response(response, status, payload)
   result = { success: status }
   if status
     result[:result] = payload
@@ -27,16 +27,16 @@ app.post("/v1/api/write") do |request, response|
     token = request.query("token")
     record = request.query("record")
     if record.nil?
-      next send(response, false, "INCOMPLETE_PARAMETERS")
+      next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
     pdb.write(record, request.json)
-    next send(response, true, {
+    next send_response(response, true, {
       token: pdb.token,
       list: pdb.records
     })
   rescue Exception => e
-    next send(response, false, {
+    next send_response(response, false, {
       message: e.to_s,
       trace: e.backtrace
     })
@@ -48,17 +48,17 @@ app.get("/v1/api/read") do |request, response|
     token = request.query("token")
     record = request.query("record")
     if record.nil? || token.nil?
-      next send(response, false, "INCOMPLETE_PARAMETERS")
+      next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
     result = pdb.read(record)
-    next send(response, true, {
+    next send_response(response, true, {
       token: pdb.token,
       list: pdb.records,
       data: result
     })
   rescue Exception => e
-    next send(response, false, {
+    next send_response(response, false, {
       message: e.to_s,
       trace: e.backtrace
     })
@@ -70,17 +70,17 @@ app.get("/v1/api/has") do |request, response|
     token = request.query("token")
     record = request.query("record")
     if record.nil? || token.nil?
-      next send(response, false, "INCOMPLETE_PARAMETERS")
+      next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
     result = pdb.has(record)
-    next send(response, true, {
+    next send_response(response, true, {
       token: pdb.token,
       list: pdb.records,
       exists: result
     })
   rescue Exception => e
-    next send(response, false, {
+    next send_response(response, false, {
       message: e.to_s,
       trace: e.backtrace
     })
@@ -92,16 +92,16 @@ app.get("/v1/api/delete") do |request, response|
     token = request.query("token")
     record = request.query("record")
     if record.nil? || token.nil?
-      next send(response, false, "INCOMPLETE_PARAMETERS")
+      next send_response(response, false, "INCOMPLETE_PARAMETERS")
     end
     pdb = PocketDatabase.new(token: token)
     pdb.delete(record)
-    next send(response, true, {
+    next send_response(response, true, {
       token: pdb.token,
       list: pdb.records
     })
   rescue Exception => e
-    next send(response, false, {
+    next send_response(response, false, {
       message: e.to_s,
       trace: e.backtrace
     })
@@ -109,5 +109,5 @@ app.get("/v1/api/delete") do |request, response|
 end
 
 app.notfound do |request, response|
-  send(response, false, "INVALID_ENDPOINT")
+  send_response(response, false, "INVALID_ENDPOINT")
 end
