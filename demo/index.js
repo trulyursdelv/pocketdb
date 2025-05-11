@@ -18,7 +18,7 @@ async function login() {
   $("#login-spinner").show();
   $("#login-btn-login, #login-btn-new, #login-input").prop("disabled", true);
   try {
-    const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/api/v1/read?record=main&token=${token}`);
+    const f = await fetch(`https://pocketdatabase.vercel.app/v1/api/read?record=main&token=${token}`);
     const res = await f.json();
     if(!res.success && res.error.includes("ACCESS_TOKEN_INVALID")) {
       $("#login-input").addClass("pdb-input-error");
@@ -199,7 +199,7 @@ async function commit(key) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: null
+        body: "null"
       });
       const res = await f.json();
       if(!res.success && res.error == "INTERNAL_ERROR") {
@@ -235,7 +235,7 @@ async function commit(key) {
   }
   $(`[data-textarea="${key}"]`).removeClass("pdb-input-error");
   $(`[data-label="${key}"]`).hide();
-  let value = $(`[data-textarea="${key}"]`).val().trim() || "null";
+  let value = $(`[data-textarea="${key}"]`).val().trim();
   try {
     value = JSON.parse(value);
     if(typeof value == "number" && !isFinite(value)) value = value < 0 ? Number.MIN_VALUE : Number.MAX_VALUE;
