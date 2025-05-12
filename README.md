@@ -31,6 +31,7 @@ gem "pocketdb", "~> 1.0"
 - [Getting Started](docs/README.md)
 - [Connecting to a database](docs/DATABASE.md)
 - [Manipulating a record](docs/RECORD.md)
+- [Guide to Rest API](docs/REST.md)
 
 ## Live Demo
 
@@ -42,8 +43,7 @@ If you want a quick view and tour to your website, you can use Pocket Database L
 
 To be fully committed on being an on-the-go database, I implemented a simple CRUD-operated Rest API for Pocket Database.
 
-<!-- TODO: Fix the Rest API and add it here. -->
-[![Pocket Database Rest API](https://badgers.space/badge/PocketDB/Rest%20API?icon=feather-activity&color=e97451&scale=1.2&corner_radius=3)](about:blank)
+[![Pocket Database Rest API](https://badgers.space/badge/PocketDB/Rest%20API?icon=feather-activity&color=e97451&scale=1.2&corner_radius=3)](docs/REST.md)
 
 ## :sparkles: Why Pocket Database?
 If you need an on-the-go database without hassle setups, Pocket Database is one of your best choice.
